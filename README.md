@@ -1,6 +1,6 @@
 # MCP Faker API
 
-A Model Context Protocol (MCP) server that provides access to the Faker API through a standardized interface.
+A Model Context Protocol (MCP) server that provides access to the [Faker API](https://fakerapi.it/) through a standardized interface.
 
 ## Installation
 
