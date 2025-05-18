@@ -21,23 +21,6 @@ const server = new McpServer({
 });
 
 server.tool(
-  "greet",
-  {
-    name: z.string().describe("The name of the person to greet"),
-  },
-  async ({ name }) => {
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Hello ${name}`,
-        },
-      ],
-    };
-  },
-);
-
-server.tool(
   "fetch-fake-addresses",
   {
     locale: z
@@ -55,16 +38,28 @@ server.tool(
       ),
   },
   async ({ locale, quantity, seed }) => {
-    const addresses = await fetchAddresses({ locale, quantity, seed });
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(addresses, null, 2),
-        },
-      ],
-      isError: false,
-    };
+    try {
+      const addresses = await fetchAddresses({ locale, quantity, seed });
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(addresses, null, 2),
+          },
+        ],
+        isError: false,
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error: ${error}`,
+          },
+        ],
+        isError: true,
+      };
+    }
   },
 );
 
@@ -79,16 +74,28 @@ server.tool(
       .describe("The seed to use for the books to get always the same results"),
   },
   async ({ locale, quantity, seed }) => {
-    const books = await fetchBooks({ locale, quantity, seed });
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(books, null, 2),
-        },
-      ],
-      isError: false,
-    };
+    try {
+      const books = await fetchBooks({ locale, quantity, seed });
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(books, null, 2),
+          },
+        ],
+        isError: false,
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error: ${error}`,
+          },
+        ],
+        isError: true,
+      };
+    }
   },
 );
 
@@ -110,16 +117,28 @@ server.tool(
       ),
   },
   async ({ locale, quantity, seed }) => {
-    const companies = await fetchCompanies({ locale, quantity, seed });
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(companies, null, 2),
-        },
-      ],
-      isError: false,
-    };
+    try {
+      const companies = await fetchCompanies({ locale, quantity, seed });
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(companies, null, 2),
+          },
+        ],
+        isError: false,
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error: ${error}`,
+          },
+        ],
+        isError: true,
+      };
+    }
   },
 );
 
@@ -141,16 +160,28 @@ server.tool(
       ),
   },
   async ({ locale, quantity, seed }) => {
-    const creditCards = await fetchCreditCards({ locale, quantity, seed });
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(creditCards, null, 2),
-        },
-      ],
-      isError: false,
-    };
+    try {
+      const creditCards = await fetchCreditCards({ locale, quantity, seed });
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(creditCards, null, 2),
+          },
+        ],
+        isError: false,
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error: ${error}`,
+          },
+        ],
+        isError: true,
+      };
+    }
   },
 );
 
@@ -169,16 +200,28 @@ server.tool(
       .describe("The gender to filter users by"),
   },
   async ({ locale, quantity, seed, gender }) => {
-    const users = await fetchUsers({ locale, quantity, seed, gender });
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(users, null, 2),
-        },
-      ],
-      isError: false,
-    };
+    try {
+      const users = await fetchUsers({ locale, quantity, seed, gender });
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(users, null, 2),
+          },
+        ],
+        isError: false,
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error: ${error}`,
+          },
+        ],
+        isError: true,
+      };
+    }
   },
 );
 
@@ -199,21 +242,33 @@ server.tool(
       .describe("The number of product categories to return"),
   },
   async ({ locale, quantity, seed, categoriesNumber }) => {
-    const products = await fetchProducts({
-      locale,
-      quantity,
-      seed,
-      categoriesNumber,
-    });
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(products, null, 2),
-        },
-      ],
-      isError: false,
-    };
+    try {
+      const products = await fetchProducts({
+        locale,
+        quantity,
+        seed,
+        categoriesNumber,
+      });
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(products, null, 2),
+          },
+        ],
+        isError: false,
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error: ${error}`,
+          },
+        ],
+        isError: true,
+      };
+    }
   },
 );
 
@@ -234,16 +289,28 @@ server.tool(
       .describe("The type of images to fetch"),
   },
   async ({ locale, quantity, seed, type }) => {
-    const images = await fetchImages({ locale, quantity, seed, type });
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(images, null, 2),
-        },
-      ],
-      isError: false,
-    };
+    try {
+      const images = await fetchImages({ locale, quantity, seed, type });
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(images, null, 2),
+          },
+        ],
+        isError: false,
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error: ${error}`,
+          },
+        ],
+        isError: true,
+      };
+    }
   },
 );
 
@@ -260,16 +327,28 @@ server.tool(
       ),
   },
   async ({ locale, quantity, seed }) => {
-    const colors = await fetchColors({ locale, quantity, seed });
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(colors, null, 2),
-        },
-      ],
-      isError: false,
-    };
+    try {
+      const colors = await fetchColors({ locale, quantity, seed });
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(colors, null, 2),
+          },
+        ],
+        isError: false,
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error: ${error}`,
+          },
+        ],
+        isError: true,
+      };
+    }
   },
 );
 
