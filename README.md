@@ -23,8 +23,16 @@ A Model Context Protocol (MCP) server that provides access to the Faker API thro
 
 4. Run the MCP server:
    ```bash
-   bun run start
+   bun start
    ```
+
+## Inspector
+
+You can run the MCP server with the inspector by running:
+
+```bash
+bun run start:inspector
+```
 
 ## MCP Configuration
 

@@ -307,8 +307,6 @@ server.tool(
 const runServer = async () => {
 	const transport = new StdioServerTransport();
 	await server.connect(transport);
-
-	log("Faker API server started");
 };
 
 runServer().catch((error) => {
