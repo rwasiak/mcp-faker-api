@@ -21,7 +21,7 @@ const server = new McpServer({
 });
 
 server.tool(
-  "fetch-fake-addresses",
+  "generate-fake-addresses",
   {
     locale: z
       .enum(locales)
@@ -64,7 +64,7 @@ server.tool(
 );
 
 server.tool(
-  "fetch-fake-books",
+  "generate-fake-books",
   {
     locale: z.enum(locales).describe("The locale to use for the fake books"),
     quantity: z.number().optional().describe("The number of books to fetch"),
@@ -100,7 +100,7 @@ server.tool(
 );
 
 server.tool(
-  "fetch-fake-companies",
+  "generate-fake-companies",
   {
     locale: z
       .enum(locales)
@@ -143,7 +143,7 @@ server.tool(
 );
 
 server.tool(
-  "fetch-fake-credit-cards",
+  "generate-fake-credit-cards",
   {
     locale: z
       .enum(locales)
@@ -186,7 +186,7 @@ server.tool(
 );
 
 server.tool(
-  "fetch-fake-users",
+  "generate-fake-users",
   {
     locale: z.enum(locales).describe("The locale to use for the fake users"),
     quantity: z.number().optional().describe("The number of users to fetch"),
@@ -226,7 +226,7 @@ server.tool(
 );
 
 server.tool(
-  "fetch-fake-products",
+  "generate-fake-products",
   {
     locale: z.enum(locales).describe("The locale to use for the fake products"),
     quantity: z.number().optional().describe("The number of products to fetch"),
@@ -273,7 +273,7 @@ server.tool(
 );
 
 server.tool(
-  "fetch-fake-images",
+  "generate-fake-images",
   {
     locale: z.enum(locales).describe("The locale to use for the fake images"),
     quantity: z.number().optional().describe("The number of images to fetch"),
@@ -315,7 +315,7 @@ server.tool(
 );
 
 server.tool(
-  "fetch-fake-colors",
+  "generate-fake-colors",
   {
     locale: z.enum(locales).describe("The locale to use for the fake colors"),
     quantity: z.number().optional().describe("The number of colors to fetch"),
@@ -353,7 +353,7 @@ server.tool(
 );
 
 server.tool(
-  "fetch-fake-custom-data",
+  "generate-fake-custom-data",
   {
     locale: z.enum(locales).describe("The locale to use for the fake data"),
     quantity: z
