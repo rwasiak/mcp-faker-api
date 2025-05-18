@@ -14,7 +14,6 @@ import {
   fetchUsers,
   locales,
 } from "./faker-api";
-import { log } from "./utils/logger.js";
 
 const server = new McpServer({
   name: "faker-api",
@@ -310,6 +309,6 @@ const runServer = async () => {
 };
 
 runServer().catch((error) => {
-  log("Fatal error in main():", error);
+  console.error("Fatal error:", error);
   process.exit(1);
 });
