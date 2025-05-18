@@ -12,15 +12,15 @@ import { fetchWithParams } from "../utils/fetch-utils";
  * @returns {Promise<string[]>} - A promise resolving to an array of fake users.
  */
 export async function fetchUsers({
-	locale,
-	quantity,
-	seed,
-	gender,
+  locale,
+  quantity,
+  seed,
+  gender,
 }: CommonParams & { gender?: "male" | "female" | "other" }) {
-	return fetchWithParams("users", {
-		locale,
-		quantity,
-		seed,
-		extraParams: { gender },
-	});
+  return fetchWithParams("users", {
+    locale,
+    quantity,
+    seed,
+    extraParams: { gender },
+  });
 }

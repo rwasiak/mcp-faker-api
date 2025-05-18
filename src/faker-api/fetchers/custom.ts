@@ -13,19 +13,19 @@ import { fetchWithParams } from "../utils/fetch-utils";
  * @returns {Promise<string[]>} - A promise resolving to an array of custom fake data.
  */
 export async function fetchCustom({
-	locale,
-	quantity,
-	seed,
-	fields,
+  locale,
+  quantity,
+  seed,
+  fields,
 }: CommonParams & { fields: CustomFields }) {
-	const fieldsString = Object.entries(fields)
-		.map(([key, type]) => `${key}=${type}`)
-		.join("&");
+  const fieldsString = Object.entries(fields)
+    .map(([key, type]) => `${key}=${type}`)
+    .join("&");
 
-	return fetchWithParams("custom", {
-		locale,
-		quantity,
-		seed,
-		extraParams: { fields: fieldsString },
-	});
+  return fetchWithParams("custom", {
+    locale,
+    quantity,
+    seed,
+    extraParams: { fields: fieldsString },
+  });
 }

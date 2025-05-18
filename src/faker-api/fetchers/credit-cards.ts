@@ -11,13 +11,13 @@ import { fetchWithParams } from "../utils/fetch-utils";
  * @returns {Promise<string[]>} - A promise resolving to an array of fake credit cards.
  */
 export async function fetchCreditCards({
-	locale,
-	quantity,
-	seed,
+  locale,
+  quantity,
+  seed,
 }: CommonParams) {
-	return fetchWithParams("credit-cards", {
-		locale,
-		quantity,
-		seed,
-	});
+  return fetchWithParams("credit-cards", {
+    locale,
+    quantity,
+    seed,
+  });
 }

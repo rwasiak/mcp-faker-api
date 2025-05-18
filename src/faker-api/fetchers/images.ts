@@ -11,15 +11,15 @@ import { fetchWithParams } from "../utils/fetch-utils";
  * @returns {Promise<string[]>} - A promise resolving to an array of fake images.
  */
 export async function fetchImages({
-	locale,
-	quantity,
-	seed,
-	type,
+  locale,
+  quantity,
+  seed,
+  type,
 }: CommonParams & { type?: "any" | "pokemon" }) {
-	return fetchWithParams("images", {
-		locale,
-		quantity,
-		seed,
-		extraParams: { type },
-	});
+  return fetchWithParams("images", {
+    locale,
+    quantity,
+    seed,
+    extraParams: { type },
+  });
 }

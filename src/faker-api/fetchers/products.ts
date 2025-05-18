@@ -12,15 +12,15 @@ import { fetchWithParams } from "../utils/fetch-utils";
  * @returns {Promise<string[]>} - A promise resolving to an array of fake products.
  */
 export async function fetchProducts({
-	locale,
-	quantity,
-	seed,
-	categoriesNumber,
+  locale,
+  quantity,
+  seed,
+  categoriesNumber,
 }: CommonParams & { categoriesNumber?: number }) {
-	return fetchWithParams("products", {
-		locale,
-		quantity,
-		seed,
-		extraParams: { categoriesNumber },
-	});
+  return fetchWithParams("products", {
+    locale,
+    quantity,
+    seed,
+    extraParams: { categoriesNumber },
+  });
 }

@@ -10,9 +10,9 @@ import { fetchWithParams } from "../utils/fetch-utils";
  * @returns {Promise<string[]>} - A promise resolving to an array of fake colors.
  */
 export async function fetchColors({ locale, quantity, seed }: CommonParams) {
-	return fetchWithParams("colors", {
-		locale,
-		quantity,
-		seed,
-	});
+  return fetchWithParams("colors", {
+    locale,
+    quantity,
+    seed,
+  });
 }

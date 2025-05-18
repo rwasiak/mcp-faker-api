@@ -11,10 +11,10 @@ import { fetchWithParams } from "../utils/fetch-utils";
  * @returns {Promise<string[]>} - A promise resolving to an array of fake addresses.
  */
 export async function fetchAddresses({ locale, quantity, seed }: CommonParams) {
-	return fetchWithParams("addresses", {
-		locale,
-		quantity,
-		seed,
-		extraParams: { _country_code: locale },
-	});
+  return fetchWithParams("addresses", {
+    locale,
+    quantity,
+    seed,
+    extraParams: { _country_code: locale },
+  });
 }

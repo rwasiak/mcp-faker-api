@@ -11,9 +11,9 @@ import { fetchWithParams } from "../utils/fetch-utils";
  * @returns {Promise<string[]>} - A promise resolving to an array of fake companies.
  */
 export async function fetchCompanies({ locale, quantity, seed }: CommonParams) {
-	return fetchWithParams("companies", {
-		locale,
-		quantity,
-		seed,
-	});
+  return fetchWithParams("companies", {
+    locale,
+    quantity,
+    seed,
+  });
 }
