@@ -1,0 +1,23 @@
+{
+	"name": "mcp-faker-api",
+	"module": "index.ts",
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	},
+	"peerDependencies": {
+		"typescript": "5.8.3"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "1.11.4",
+		"zod": "3.24.4"
+	},
+	"scripts": {
+		"build": "bun build src/index.ts --outdir build --target node --entry-naming [dir]/[name].mjs",
+		"build:watch": "bun build --watch src/index.ts --outdir build --target node --entry-naming [dir]/[name].mjs",
+		"start": "node build/index.mjs",
+		"start:debug": "DEBUG=true bun start",
+		"start:inspector": "bunx @modelcontextprotocol/inspector bun start",
+		"start:inspector:cli": "bunx @modelcontextprotocol/inspector --cli bun start --method tools/list"
+	}
+}
