@@ -290,16 +290,28 @@ server.tool(
       .describe("The fields to generate and their types"),
   },
   async ({ locale, quantity, seed, fields }) => {
-    const customData = await fetchCustom({ locale, fields, quantity, seed });
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(customData, null, 2),
-        },
-      ],
-      isError: false,
-    };
+    try {
+      const customData = await fetchCustom({ locale, fields, quantity, seed });
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(customData, null, 2),
+          },
+        ],
+        isError: false,
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error: ${error}`,
+          },
+        ],
+        isError: true,
+      };
+    }
   },
 );
 
