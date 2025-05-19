@@ -55,16 +55,16 @@ The MCP server provides the following tools for generating fake data:
 
 ### Basic Data Generation
 
-- `fetch-fake-addresses`: Generate fake addresses
-- `fetch-fake-books`: Generate fake books
-- `fetch-fake-companies`: Generate fake company names
-- `fetch-fake-credit-cards`: Generate fake credit card numbers
-- `fetch-fake-users`: Generate fake user profiles
-- `fetch-fake-products`: Generate fake product data
-- `fetch-fake-images`: Generate fake image URLs
-- `fetch-fake-colors`: Generate fake color values
+- `generate-fake-addresses`: Generate fake addresses
+- `generate-fake-books`: Generate fake books
+- `generate-fake-companies`: Generate fake company names
+- `generate-fake-credit-cards`: Generate fake credit card numbers
+- `generate-fake-users`: Generate fake user profiles
+- `generate-fake-products`: Generate fake product data
+- `generate-fake-images`: Generate fake image URLs
+- `generate-fake-colors`: Generate fake color values
 
 ### Custom Data Generation
 
-- `fetch-fake-custom`: Generate custom fake data with specified fields
+- `generate-fake-custom-data`: Generate custom fake data with specified fields
 
